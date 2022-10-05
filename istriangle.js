@@ -12,6 +12,21 @@ function calculateSumOfAngles()
 
 function isTriangle()
 {
+    if (inputs[0].value === '' || inputs[1].value === '' || inputs[2].value === '')
+    {
+        outputElement.innerText = "Please fill out all the fields!";
+        return;
+    }
+    if (inputs[0].value < 0 || inputs[1].value < 0 || inputs[2].value < 0)
+    {
+        outputElement.innerText = "Please fill out non negative values for every field";
+        return;
+    }
+    if (inputs[0].value === '0' || inputs[1].value === '0' || inputs[2].value === '0')
+    {
+        outputElement.innerText = "Please fill out non zero values for every field!";
+        return;
+    }
     var sumOfAngles = calculateSumOfAngles();
     if (sumOfAngles === 180)
     {
